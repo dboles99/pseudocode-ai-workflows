@@ -1,2 +1,2 @@
-﻿def test_sanity():
+def test_sanity():
     assert 1 + 1 == 2
