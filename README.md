@@ -12,10 +12,13 @@ Research->code pipeline: pseudocode -> Python/PowerShell with contracts (REQUIRE
 - Final paper (DOCX) under `paper/` (also attach to a Release for nice downloads)
 
 ## Structure
-.github/workflows/ # CI
-assets/images/ # figures
-paper/ # final paper (DOCX) + drafts/
-pseudocode/ # *.pseudo specs
-src/python/ # converters, examples, linter
-src/powershell/ # PseudoToPy.ps1
-tests/ # unit tests
+
+~~~text
+.github/workflows/    # CI
+assets/images/        # figures
+paper/                # final paper (DOCX) + drafts/
+pseudocode/           # *.pseudo specs
+src/python/           # converters, examples, linter
+src/powershell/       # PseudoToPy.ps1
+tests/                # unit tests
+~~~
