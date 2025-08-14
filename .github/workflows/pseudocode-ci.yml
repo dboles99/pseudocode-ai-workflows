@@ -1,0 +1,19 @@
+﻿name: Pseudocode CI
+on:
+  push:
+    paths: ['**.pseudo','**.py','**.yml','**.md','requirements.txt','Makefile','.github/workflows/pseudocode-ci.yml','tests/**']
+  pull_request:
+    paths: ['**.pseudo','**.py','**.yml','**.md','requirements.txt','Makefile','.github/workflows/pseudocode-ci.yml','tests/**']
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt || true
+          pip install pytest pytest-cov codespell
+      - run: codespell -S .git,**/*.docx -L teh,behaviour -q 3
+      - run: pytest -q --cov=. --cov-report=term-missing --cov-fail-under=80
