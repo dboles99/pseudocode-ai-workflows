@@ -10,6 +10,7 @@ import enhanced_v2_example as m  # noqa: E402
 from enhanced_v2_example import process_items, ContractError, with_retry  # noqa: E402
 
 
+# noqa: E402
 def test_process_items_happy_path():
     # evens <= 5 -> [2,4] -> squares = [4,16]
     assert process_items([1, 2, 3, 4, 5, 6], limiter=5, timeout_s=5.0) == [4, 16]
