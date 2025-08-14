@@ -5,6 +5,8 @@ https://github.com/dboles99/pseudocode-ai-workflows/releases/download/v1.0.0/pse
 
 📄 **Paper**: see the v1.0.0 release assets.
 
+📚 **Wiki:** https://github.com/dboles99/pseudocode-ai-workflows/wiki/Paper-IMRaD
+
 # pseudocode-ai-workflows
 
 Research->code pipeline: pseudocode -> Python/PowerShell with contracts (REQUIRES/ENSURES), timeouts, retries, CI, tests, and an APA 7.0 paper.
