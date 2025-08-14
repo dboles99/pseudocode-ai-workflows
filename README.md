@@ -1,11 +1,13 @@
+﻿> Looking for my portfolio? 👉 **https://dboles99.github.io**
+
 ![CI](https://github.com/dboles99/pseudocode-ai-workflows/actions/workflows/pseudocode-ci.yml/badge.svg)
 
-📄 Download the paper (DOCX):  
+ðŸ“„ Download the paper (DOCX):  
 https://github.com/dboles99/pseudocode-ai-workflows/releases/download/v1.0.0/pseudocode_ai_imrad_WITH_APPENDICES_PLUS_V2_CI_QG.docx
 
-📄 **Paper**: see the v1.0.0 release assets.
+ðŸ“„ **Paper**: see the v1.0.0 release assets.
 
-📚 **Wiki:** https://github.com/dboles99/pseudocode-ai-workflows/wiki/Paper-IMRaD
+ðŸ“š **Wiki:** https://github.com/dboles99/pseudocode-ai-workflows/wiki/Paper-IMRaD
 
 # pseudocode-ai-workflows
 
@@ -29,3 +31,10 @@ src/python/           # converters, examples, linter
 src/powershell/       # PseudoToPy.ps1
 tests/                # unit tests
 ~~~
+
+
+![build](https://img.shields.io/github/actions/workflow/status/dboles99/pseudocode-ai-workflows/ci.yml?branch=main)
+![coverage](https://img.shields.io/badge/coverage-80%2B%25-brightgreen)
+![license](https://img.shields.io/github/license/dboles99/pseudocode-ai-workflows)
+![release](https://img.shields.io/github/v/release/dboles99/pseudocode-ai-workflows)
+
