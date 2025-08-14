@@ -3,6 +3,8 @@
 📄 Download the paper (DOCX):  
 https://github.com/dboles99/pseudocode-ai-workflows/releases/download/v1.0.0/pseudocode_ai_imrad_WITH_APPENDICES_PLUS_V2_CI_QG.docx
 
+📄 **Paper**: see the v1.0.0 release assets.
+
 # pseudocode-ai-workflows
 
 Research->code pipeline: pseudocode -> Python/PowerShell with contracts (REQUIRES/ENSURES), timeouts, retries, CI, tests, and an APA 7.0 paper.
