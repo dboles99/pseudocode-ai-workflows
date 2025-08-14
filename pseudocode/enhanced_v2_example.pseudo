@@ -1,0 +1,30 @@
+PURPOSE: Batch filter & process items with contracts, timeout, retry
+INPUTS: items:list[int], limiter:int
+OUTPUTS: results:list
+
+REQUIRES TYPE: items: list
+REQUIRES TYPE: limiter: int
+REQUIRES: items is not None and len(items) > 0
+REQUIRES: limiter > 0
+
+TIMEOUT: 5s
+RETRY: 2 backoff=1.2
+FUNCTION ProcessItems(items, limiter) -> results
+  SET results := []
+  TRY
+    PARALLEL FOR EACH item IN items
+      # __item is the loop variable inside the parallel body
+      SET processed := process(__item)
+      IF processed.score >= limiter THEN
+        results.append(processed)
+      ELSE
+        CONTINUE
+      ENDIF
+    ENDPARALLEL
+  CATCH Exception
+    handle_error('processing_failed')
+  ENDTRY
+
+  ENSURES: len(results) <= len(items)
+  RETURN results
+END FUNCTION
