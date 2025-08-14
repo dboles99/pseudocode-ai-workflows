@@ -1,18 +1,19 @@
-﻿import importlib.util
-import pathlib
+﻿import sys, pathlib, pytest
 
+# add src/python to the import path
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-SRC = ROOT / "src" / "python"
+sys.path.insert(0, str(ROOT / "src" / "python"))
 
-def load_by_filename(module_name: str, filename: str):
-    path = SRC / filename
-    assert path.exists(), f"Expected {path} to exist"
-    spec = importlib.util.spec_from_file_location(module_name, path)
-    mod = importlib.util.module_from_spec(spec)
-    assert spec.loader is not None
-    spec.loader.exec_module(mod)
-    return mod
+from enhanced_v2_example import process_items, ContractError
 
-def test_import_enhanced_v2_example():
-    mod = load_by_filename("enhanced_v2_example", "enhanced_v2_example.py")
-    assert hasattr(mod, "__file__")
+def test_process_items_happy_path():
+    # evens <= 5 -> square them -> [2^2, 4^2] = [4, 16]
+    assert process_items([1,2,3,4,5,6], limiter=5, timeout_s=5.0) == [4, 16]
+
+def test_contracts_invalid_limiter():
+    with pytest.raises(ContractError):
+        process_items([1,2], limiter=-1)
+
+def test_contracts_bad_item_type():
+    with pytest.raises(ContractError):
+        process_items([1, "x", 2], limiter=5, timeout_s=5.0)
